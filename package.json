@@ -5,7 +5,9 @@
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
-    "start": "ionic-app-scripts serve",
+    "frontend": "ionic-app-scripts serve",
+    "backend": "DEBUG=assignment:* node ./src/backend/bin/www",
+    "start": "concurrently \"npm:frontend\" \"npm:backend\"",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint"
@@ -35,8 +37,12 @@
     "@ionic-native/splash-screen": "~4.15.0",
     "@ionic-native/status-bar": "~4.15.0",
     "@ionic/storage": "2.2.0",
+    "cookie-parser": "^1.4.3",
+    "debug": "^4.1.0",
+    "express": "^4.16.4",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
+    "morgan": "^1.9.1",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.26"
@@ -44,10 +50,13 @@
   "devDependencies": {
     "@ionic/app-scripts": "3.2.0",
     "@ionic/lab": "^1.0.11",
+    "concurrently": "^4.0.1",
     "husky": "^1.1.2",
     "lint-staged": "^7.3.0",
     "prettier": "^1.14.3",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project"
+  "config": {
+    "ionic_src_dir": "src/frontend"
+  }
 }
