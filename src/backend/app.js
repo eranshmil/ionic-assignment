@@ -1,20 +1,22 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const logger = require('morgan');
+const cors = require('cors');
+const debug = require('debug')('assignment:server');
+const validator = require('express-validator');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const urlsRouter = require('./routes/urls');
 
-var app = express();
+const app = express();
+const port = process.env.PORT || 3000;
 
+app.use(cors());
 app.use(logger('dev'));
+app.use(validator());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/urls', urlsRouter);
 
-module.exports = app;
+app.listen(port, () => {
+  debug('Listening on port ' + port);
+});
