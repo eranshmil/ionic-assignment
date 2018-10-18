@@ -6,9 +6,9 @@
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
-    "frontend": "ionic-app-scripts serve",
-    "backend": "DEBUG=assignment:* node ./src/backend/app.js",
-    "start": "concurrently \"npm:frontend\" \"npm:backend\"",
+    "client": "ionic-app-scripts serve",
+    "server": "DEBUG=assignment:* node ./src/server/server.js",
+    "start": "concurrently \"npm:client\" \"npm:server\"",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint"
@@ -59,6 +59,6 @@
     "typescript": "~2.6.2"
   },
   "config": {
-    "ionic_src_dir": "src/frontend"
+    "ionic_src_dir": "src/client"
   }
 }

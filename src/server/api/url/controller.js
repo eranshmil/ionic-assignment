@@ -1,11 +1,8 @@
-const express = require('express');
-const router = express.Router();
+const { validationResult } = require('express-validator/check');
 
-const { check, validationResult } = require('express-validator/check');
+const config = require('../../config/config');
 
-const config = require('../config');
-
-router.post('/', [check('url').isURL()], (req, res, next) => {
+function validateUrl(req, res) {
   let redirectTo = validationResult(req).isEmpty()
     ? req.body.url
     : config.defaultUrl || '';
@@ -23,6 +20,8 @@ router.post('/', [check('url').isURL()], (req, res, next) => {
   }
 
   res.json({ redirectTo });
-});
+}
 
-module.exports = router;
+module.exports = {
+  validateUrl,
+};
