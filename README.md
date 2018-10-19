@@ -2,6 +2,12 @@
 
 An Ionic application that redirect the user to the selected/default url.
 
+## Live server
+
+```
+https://ionic-node-assignment.herokuapp.com/
+```
+
 ## Installation
 
 ```sh
@@ -33,6 +39,14 @@ npm run prod
 # or
 yarn prod
 ```
+
+## Endpoints
+
+Base url path: /api/v1
+
+| Path |           Parameters           |
+| :--: | :----------------------------: |
+| /url | url: string, redirect: boolean |
 
 ## Built with
 
