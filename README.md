@@ -19,6 +19,9 @@ npm run dev:server
 
 # Run both
 npm run dev
+
+# Run Ionic client using production api
+npm run prod
 ```
 
 ## Built with

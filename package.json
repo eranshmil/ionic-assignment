@@ -10,6 +10,7 @@
     "dev:client": "ionic-app-scripts serve",
     "dev:server": "DEBUG=assignment:* node ./src/server/server.js",
     "dev": "concurrently \"npm:dev:client\" \"npm:dev:server\"",
+    "prod": "ionic-app-scripts serve --prod",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint"
