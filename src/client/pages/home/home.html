@@ -1,14 +1,33 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Url Redirector
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <ion-list>
+
+            <ion-item>
+                <ion-label floating>URL</ion-label>
+                <ion-input type="text" formControlName="url"></ion-input>
+            </ion-item>
+            <input-error [error]="errors?.url"></input-error>
+
+            <ion-item no-lines>
+                <ion-label>Redirect</ion-label>
+                <ion-checkbox formControlName="redirect" color="primary"></ion-checkbox>
+            </ion-item>
+            <input-error [error]="errors?.redirect"></input-error>
+
+            <div padding>
+                <button ion-button block>Send</button>
+            </div>
+
+        </ion-list>
+    </form>
+
 </ion-content>

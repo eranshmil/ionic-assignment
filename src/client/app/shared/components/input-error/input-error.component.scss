@@ -1,0 +1,10 @@
+input-error {
+  .error {
+    overflow: hidden;
+    height: 1em;
+    font-size: 90%;
+    color: color($colors, danger);
+
+    @include padding-horizontal($item-md-padding-start, 0);
+  }
+}
