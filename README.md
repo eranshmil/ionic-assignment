@@ -52,11 +52,11 @@ Base url path: /api/v1
 
 |                                   Package                                   | Version |
 | :-------------------------------------------------------------------------: | :-----: |
-|                                 Express.js                                  |    4    |
-| [Express Validator](https://github.com/express-validator/express-validator) |  5.3.0  |
+|                                 Express.js                                  |  4.\*   |
+| [Express Validator](https://github.com/express-validator/express-validator) |  5.\*   |
 |                                   Angular                                   | 5.2.11  |
 |                                    Ionic                                    |  3.9.2  |
-|   [In App Browser](https://github.com/apache/cordova-plugin-inappbrowser)   |  3.0.0  |
+|   [In App Browser](https://github.com/apache/cordova-plugin-inappbrowser)   | 3.0.\*  |
 
 ## Developed under
 
