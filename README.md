@@ -1,4 +1,4 @@
-# Ionic & NodeJS Assignment
+# Ionic & Express.js Assignment
 
 An Ionic application that redirect the user to the selected/default url.
 
