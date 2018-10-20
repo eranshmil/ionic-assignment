@@ -71,11 +71,11 @@ docker-compose down
 
 Base url path: /api/v1
 
-| Method | Path | Description |
-| :----: | :--: | :---------: |
-|  POST  |      |    /url     | url: string, redirect: boolean |
-|  GET   |      |     /db     | Seed the collection with default url (google.com) |
-|  GET   |      |  /db/clear  | Clear the collection from urls |
+| Method |   Path    |                    Description                    |
+| :----: | :-------: | :-----------------------------------------------: |
+|  POST  |   /url    |          url: string, redirect: boolean           |
+|  GET   |    /db    | Seed the collection with default url (google.com) |
+|  GET   | /db/clear |          Clear the collection from urls           |
 
 ## Built with
 
