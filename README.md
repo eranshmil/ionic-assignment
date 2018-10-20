@@ -5,7 +5,7 @@ An Ionic application that redirect the user to the selected/default url.
 ## Live server
 
 ```
-https://ionic-node-assignment.herokuapp.com/
+https://ionic-express-assignment.herokuapp.com/
 ```
 
 ## Installation
@@ -38,6 +38,33 @@ yarn dev
 npm run prod
 # or
 yarn prod
+```
+
+## Running server with docker
+
+If you don't have MongoDB on your environment, you could use the docker.
+
+First, create docker machine and enable port forwarding to your host:
+
+```bash
+docker-machine create assignment
+eval $(docker-machine env assignment)
+
+vboxmanage controlvm assignment natpf1 "3000,tcp,127.0.0.1,3000,,3000"
+vboxmanage controlvm assignment natpf1 "27017,tcp,127.0.0.1,27017,,27017"
+```
+
+Then use the following commands to run/stop the containers:
+
+```bash
+# Run first time
+docker-compose up --build
+
+# And then
+docker-compose up
+
+# Stop
+docker-compose down
 ```
 
 ## Endpoints

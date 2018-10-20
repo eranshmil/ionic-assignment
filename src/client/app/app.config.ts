@@ -5,7 +5,7 @@ declare var process: { env: { [key: string]: string | undefined } };
 const API_URL =
   process.env.IONIC_ENV === 'dev'
     ? 'http://localhost:3000/api/v1'
-    : 'https://ionic-node-assignment.herokuapp.com/api/v1';
+    : 'https://ionic-express-assignment.herokuapp.com/api/v1';
 
 export interface AppConfig {
   endpoints: {
