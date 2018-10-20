@@ -47,6 +47,7 @@
     "express-validator": "^5.3.0",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
+    "mongoose": "^5.3.4",
     "morgan": "^1.9.1",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",

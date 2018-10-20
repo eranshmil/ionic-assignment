@@ -80,6 +80,7 @@ Base url path: /api/v1
 |                                   Package                                   | Version |
 | :-------------------------------------------------------------------------: | :-----: |
 |                                 Express.js                                  |  4.\*   |
+|                                  Mongoose                                   |  5.\*   |
 | [Express Validator](https://github.com/express-validator/express-validator) |  5.\*   |
 |                                   Angular                                   | 5.2.11  |
 |                                    Ionic                                    |  3.9.2  |
@@ -87,11 +88,13 @@ Base url path: /api/v1
 
 ## Developed under
 
-| Platform  | Version |
-| :-------: | :-----: |
-|   macOS   | 10.13.6 |
-|  NodeJS   | 8.11.1  |
-|    npm    |  6.1.0  |
-|   Yarn    |  1.9.4  |
-|  Cordova  |  8.1.2  |
-| Ionic CLI |  4.2.1  |
+| Platform  |  Version   |
+| :-------: | :--------: |
+|   macOS   |  10.13.6   |
+|  NodeJS   |   8.11.1   |
+|    npm    |   6.1.0    |
+|   Yarn    |   1.9.4    |
+|  Cordova  |   8.1.2    |
+| Ionic CLI |   4.2.1    |
+|  Docker   | 18.06.1-ce |
+|  MongoDB  |   4.0.3    |
