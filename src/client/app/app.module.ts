@@ -7,12 +7,18 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 
 import { SharedModule } from './shared/shared.module';
-import { APP_CONFIG, APP_CONFIG_TOKEN } from './app.config';
+import { APP_CONFIG, APP_CONFIG_TOKEN, BASE_URL } from './app.config';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UrlProvider } from '../providers/url.provider';
+
+const config: SocketIoConfig = {
+  url: BASE_URL,
+  options: { autoConnect: false },
+};
 
 @NgModule({
   declarations: [MyApp, HomePage],
@@ -22,6 +28,7 @@ import { UrlProvider } from '../providers/url.provider';
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     SharedModule,
+    SocketIoModule.forRoot(config),
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, HomePage],

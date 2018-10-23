@@ -1,6 +1,6 @@
 # Ionic & Express.js Assignment
 
-An Ionic application that redirect the user to the selected/default url.
+An Ionic & Express application that redirect the user to the selected/default url.
 
 ## Live server
 
@@ -79,14 +79,16 @@ Base url path: /api/v1
 
 ## Built with
 
-|                                   Package                                   | Version |
-| :-------------------------------------------------------------------------: | :-----: |
-|                                 Express.js                                  |  4.\*   |
-|                                  Mongoose                                   |  5.\*   |
-| [Express Validator](https://github.com/express-validator/express-validator) |  5.\*   |
-|                                   Angular                                   | 5.2.11  |
-|                                    Ionic                                    |  3.9.2  |
-|   [In App Browser](https://github.com/apache/cordova-plugin-inappbrowser)   | 3.0.\*  |
+|                                       Package                                        | Version |
+| :----------------------------------------------------------------------------------: | :-----: |
+|                  [Express.js](https://github.com/expressjs/express)                  |  4.\*   |
+|                  [Socket.IO](https://github.com/socketio/socket.io)                  |  2.\*   |
+|                  [Mongoose](https://github.com/Automattic/mongoose)                  |  5.\*   |
+|     [express-validator](https://github.com/express-validator/express-validator)      |  5.\*   |
+|                    [Angular](https://github.com/angular/angular)                     | 5.2.11  |
+|             [ng-socket-io](https://github.com/bougarfaoui/ng-socket-io)              |  0.2\*  |
+|                     [Ionic](https://github.com/ionic-team/ionic)                     |  3.9.2  |
+| [cordova-plugin-inappbrowser](https://github.com/apache/cordova-plugin-inappbrowser) | 3.0.\*  |
 
 ## Developed under
 
