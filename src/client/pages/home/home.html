@@ -23,6 +23,10 @@
             </ion-item>
             <input-error [error]="errors?.redirect"></input-error>
 
+            <ion-item no-lines *ngIf="responseUrl">
+                Response: {{ responseUrl }}
+            </ion-item>
+
             <div padding>
                 <button ion-button block>Send</button>
             </div>

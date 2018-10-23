@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
-import { UrlProvider } from '../../providers/url.provider';
+import { SocketProvider, UrlProvider } from '../../providers';
 
 @Component({
   selector: 'page-home',
@@ -12,11 +12,13 @@ import { UrlProvider } from '../../providers/url.provider';
 export class HomePage implements OnInit {
   public form: FormGroup;
   public errors: {};
+  public responseUrl: string;
 
   constructor(
     private _formBuilder: FormBuilder,
     private _urlProvider: UrlProvider,
-    private _inAppBrowser: InAppBrowser
+    private _inAppBrowser: InAppBrowser,
+    private _socketProvider: SocketProvider
   ) {}
 
   ngOnInit() {
@@ -28,11 +30,32 @@ export class HomePage implements OnInit {
   }
 
   public onSubmit() {
+    this._socketProvider.disconnect();
+    this.responseUrl = '';
+
     this._urlProvider
       .postUrl(this.form.value)
       .subscribe((redirectTo: string) => {
-        this._inAppBrowser.create(redirectTo);
         this.errors = {};
+
+        if (!this.form.value.redirect) {
+          this.updateUrlFromServer(redirectTo);
+        } else {
+          this._inAppBrowser.create(redirectTo);
+        }
       }, errors => (this.errors = errors));
+  }
+
+  private updateUrlFromServer(redirectTo: string) {
+    const { url } = this.form.value;
+
+    this.responseUrl = url;
+
+    this._socketProvider
+      .connect(
+        redirectTo,
+        url
+      )
+      .subscribe(url => (this.responseUrl = url));
   }
 }

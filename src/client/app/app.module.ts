@@ -13,9 +13,9 @@ import { SharedModule } from './shared/shared.module';
 import { APP_CONFIG, APP_CONFIG_TOKEN, BASE_URL } from './app.config';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { UrlProvider } from '../providers/url.provider';
+import { UrlProvider, SocketProvider } from '../providers';
 
-const config: SocketIoConfig = {
+const socketConfig: SocketIoConfig = {
   url: BASE_URL,
   options: { autoConnect: false },
 };
@@ -28,7 +28,7 @@ const config: SocketIoConfig = {
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     SharedModule,
-    SocketIoModule.forRoot(config),
+    SocketIoModule.forRoot(socketConfig),
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, HomePage],
@@ -39,6 +39,7 @@ const config: SocketIoConfig = {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     { provide: APP_CONFIG_TOKEN, useValue: APP_CONFIG },
     UrlProvider,
+    SocketProvider,
   ],
 })
 export class AppModule {}

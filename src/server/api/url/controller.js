@@ -2,8 +2,8 @@ const { validationResult } = require('express-validator/check');
 
 const Url = require('../models/url.model');
 
-async function findUrl(url, validationResult) {
-  if (!validationResult.isEmpty()) {
+async function findUrl(url, hasValidationError, redirect) {
+  if (hasValidationError || !redirect) {
     return await Url.findOne({ isDefault: true });
   }
 
@@ -17,13 +17,9 @@ async function findUrl(url, validationResult) {
 }
 
 async function validateUrl(req, res) {
-  const urlObject = await findUrl(req.body.url, validationResult(req));
-
-  if (!req.body.redirect) {
-    return res
-      .status(422)
-      .json({ errors: { redirect: 'You must check this box' } });
-  }
+  const hasValidationError = !validationResult(req).isEmpty();
+  const { url, redirect } = req.body;
+  const urlObject = await findUrl(url, hasValidationError, redirect);
 
   if (!urlObject || !urlObject.value) {
     return res
@@ -31,7 +27,13 @@ async function validateUrl(req, res) {
       .json({ errors: { url: 'Default url does not exists' } });
   }
 
-  res.json({ redirectTo: urlObject.value });
+  if (hasValidationError) {
+    return res.status(422).json({ errors: { url: 'Invalid url format' } });
+  }
+
+  const { value: redirectTo } = urlObject;
+
+  res.json({ redirectTo });
 }
 
 module.exports = {
