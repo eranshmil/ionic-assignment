@@ -1,7 +1,5 @@
 import { InjectionToken } from '@angular/core';
 
-declare var process: { env: { [key: string]: string | undefined } };
-
 export const BASE_URL =
   process.env.IONIC_ENV === 'dev'
     ? 'http://localhost:3000'
