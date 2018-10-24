@@ -19,22 +19,22 @@ npm install
 ## Usage
 
 ```sh
-# Run Ionic client
+# run ionic client
 yarn dev:client
 # or
 npm run dev:client
 
-# Run Express server
+# run express server
 yarn dev:server
 # or
 npm run dev:server
 
-# Run both
+# run both
 yarn dev
 #or
 npm run dev
 
-# Run Ionic client using production api
+# run ionic client using production api
 yarn prod
 # or
 npm run prod
@@ -57,13 +57,13 @@ vboxmanage controlvm assignment natpf1 "27017,tcp,127.0.0.1,27017,,27017"
 Then use the following commands to run/stop the containers:
 
 ```bash
-# Run first time
+# run first time
 docker-compose up --build
 
-# And then
+# and then
 docker-compose up
 
-# Stop
+# stop
 docker-compose down
 ```
 
@@ -76,16 +76,6 @@ Base url path: /api/v1
 |  POST  |   /url    |          url: string, redirect: boolean           |
 |  GET   |    /db    | Seed the collection with default url (google.com) |
 |  GET   | /db/clear |          Clear the collection from urls           |
-
-## Build hybrid app
-```bash
-# Android
-ionic cordova build android --release --prod
-
-# iOS
-ionic cordova build ios --release --prod
- 
-```
 
 ## Built with
 
