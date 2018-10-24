@@ -11,33 +11,33 @@ https://ionic-express-assignment.herokuapp.com/
 ## Installation
 
 ```sh
-npm ci
-# or
 yarn
+# or
+npm install
 ```
 
 ## Usage
 
 ```sh
 # Run Ionic client
-npm run dev:client
-# or
 yarn dev:client
+# or
+npm run dev:client
 
 # Run Express server
-npm run dev:server
-# or
 yarn dev:server
+# or
+npm run dev:server
 
 # Run both
-npm run dev
-#or
 yarn dev
+#or
+npm run dev
 
 # Run Ionic client using production api
-npm run prod
-# or
 yarn prod
+# or
+npm run prod
 ```
 
 ## Running server with docker
