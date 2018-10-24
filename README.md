@@ -77,6 +77,16 @@ Base url path: /api/v1
 |  GET   |    /db    | Seed the collection with default url (google.com) |
 |  GET   | /db/clear |          Clear the collection from urls           |
 
+## Build hybrid app
+```bash
+# Android
+ionic cordova build android --release --prod
+
+# iOS
+ionic cordova build ios --release --prod
+ 
+```
+
 ## Built with
 
 |                                       Package                                        | Version |
