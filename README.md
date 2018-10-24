@@ -85,6 +85,7 @@ Base url path: /api/v1
 |                  [Socket.IO](https://github.com/socketio/socket.io)                  |  2.\*   |
 |                  [Mongoose](https://github.com/Automattic/mongoose)                  |  5.\*   |
 |     [express-validator](https://github.com/express-validator/express-validator)      |  5.\*   |
+|             [response-time](https://github.com/expressjs/response-time)              |  2.\*   |
 |                    [Angular](https://github.com/angular/angular)                     | 5.2.11  |
 |             [ng-socket-io](https://github.com/bougarfaoui/ng-socket-io)              |  0.2\*  |
 |                     [Ionic](https://github.com/ionic-team/ionic)                     |  3.9.2  |
