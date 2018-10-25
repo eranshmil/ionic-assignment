@@ -41,7 +41,7 @@ export class HomePage implements OnInit {
         if (!this.form.value.redirect) {
           this.updateUrlFromServer(redirectTo);
         } else {
-          this._inAppBrowser.create(redirectTo);
+          this._inAppBrowser.create(this.buildUrlForIAB(redirectTo), '_blank');
         }
       }, errors => (this.errors = errors));
   }
@@ -57,5 +57,14 @@ export class HomePage implements OnInit {
         url
       )
       .subscribe(url => (this.responseUrl = url));
+  }
+
+  private buildUrlForIAB(url: string) {
+    // add http:// if not exists
+    if (!url.match(/^https?:\/\/\S+/i)) {
+      url = `http://${url}`;
+    }
+
+    return encodeURI(url);
   }
 }
