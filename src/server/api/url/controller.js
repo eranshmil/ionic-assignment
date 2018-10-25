@@ -27,7 +27,7 @@ async function validateUrl(req, res) {
       .json({ errors: { url: 'Default url does not exists' } });
   }
 
-  if (hasValidationError) {
+  if (!redirect && hasValidationError) {
     return res.status(422).json({ errors: { url: 'Invalid url format' } });
   }
 
