@@ -33,9 +33,8 @@ export class HomePage implements OnInit {
     this._socketProvider.disconnect();
     this.responseUrl = '';
 
-    this._urlProvider
-      .postUrl(this.form.value)
-      .subscribe((redirectTo: string) => {
+    this._urlProvider.postUrl(this.form.value).subscribe(
+      (redirectTo: string) => {
         this.errors = {};
 
         if (!this.form.value.redirect) {
@@ -43,7 +42,9 @@ export class HomePage implements OnInit {
         } else {
           this._inAppBrowser.create(this.buildUrlForIAB(redirectTo), '_blank');
         }
-      }, errors => (this.errors = errors));
+      },
+      errors => (this.errors = errors)
+    );
   }
 
   private updateUrlFromServer(redirectTo: string) {

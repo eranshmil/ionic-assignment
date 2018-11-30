@@ -13,7 +13,8 @@
     "prod": "ionic-app-scripts serve --prod",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
-    "lint": "ionic-app-scripts lint"
+    "lint": "ionic-app-scripts lint",
+    "format": "prettier --write './src/**/*'"
   },
   "husky": {
     "hooks": {
