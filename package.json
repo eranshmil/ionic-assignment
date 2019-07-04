@@ -14,7 +14,9 @@
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
-    "format": "prettier --write \"./src/**/*.{ts,js,scss,html}\""
+    "format": "prettier --write \"./src/**/*.{ts,js,scss,html}\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "husky": {
     "hooks": {
@@ -64,7 +66,8 @@
     "rxjs": "5.5.11",
     "socket.io": "^2.2.0",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.26"
+    "zone.js": "0.8.26",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@ionic/app-scripts": "^3.2.1",
@@ -94,5 +97,6 @@
       "android",
       "ios"
     ]
-  }
+  },
+  "snyk": true
 }
